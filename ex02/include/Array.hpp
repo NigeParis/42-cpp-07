@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:51:54 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/04/16 12:50:19 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:06:29 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ template <typename Template> class Array {
         unsigned int _size;
 };
     
-
+// template empty constructor
 template <typename Template>
 Array<Template>::Array(void): _myArray(new Template[0]), _size(0) {
     std::cout << "Empty array created" << std::endl;        
 };
 
-
+// template constructor of array of size n
 template <typename Template>
 Array<Template>::Array(unsigned int n): _myArray(new Template[n]), _size(n) {
     std::cout << "Array [" << n << "] created" << std::endl; 
@@ -49,7 +49,7 @@ Array<Template>::Array(unsigned int n): _myArray(new Template[n]), _size(n) {
     }
 };
 
-
+// template copy constructor
 template <typename Template>
     Array<Template>::Array(Array &array) {
         std::cout << "Copy constructor is called" << std::endl;
@@ -60,6 +60,7 @@ template <typename Template>
         this->_size = array._size;
     };
 
+// template assignement constructor  
 template <typename Template>
 Array<Template> &Array<Template>::operator=(Array &array) {
     std::cout << "Assignement is called" << std::endl;
@@ -74,12 +75,14 @@ Array<Template> &Array<Template>::operator=(Array &array) {
     return *this;
 }
 
+// template destructor
 template <typename Template>
 Array<Template>::~Array(void) {
     std::cout << "Array deleted" << std::endl; 
     delete[] _myArray;
 };
-    
+
+// template subscript operator
 template <typename Template>
 Template &Array<Template>::operator[](unsigned int i) {            
     if (i >= this->_size)
@@ -87,6 +90,7 @@ Template &Array<Template>::operator[](unsigned int i) {
     return (_myArray[i]);
 }; 
 
+// template member function size - return size of array
 template <typename Template>
 unsigned int Array<Template>::size(void) {          
         return (_size);
