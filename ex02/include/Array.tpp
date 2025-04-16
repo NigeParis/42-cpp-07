@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:09:50 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/04/16 13:11:02 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/04/16 13:15:01 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Array<Template>::Array(void): _myArray(new Template[0]), _size(0) {
 // template constructor of array of size n
 template <typename Template>
 Array<Template>::Array(unsigned int n): _myArray(new Template[n]), _size(n) {
-    std::cout << "Array [" << n << "] created" << std::endl; 
+    std::cout << "Array[" << n << "] created" << std::endl; 
     for (unsigned int i = 0; i < n; i++) {
         _myArray[i] = i + 1;
     }
