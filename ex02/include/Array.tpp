@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:09:50 by nrobinso          #+#    #+#             */
-/*   Updated: 2025/04/16 13:15:01 by nrobinso         ###   ########.fr       */
+/*   Updated: 2025/04/17 09:36:19 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ template <typename Template>
 Array<Template>::Array(unsigned int n): _myArray(new Template[n]), _size(n) {
     std::cout << "Array[" << n << "] created" << std::endl; 
     for (unsigned int i = 0; i < n; i++) {
-        _myArray[i] = i + 1;
+        _myArray[i] = i;
     }
 };
 
@@ -33,7 +33,7 @@ template <typename Template>
         std::cout << "Copy constructor is called" << std::endl;
         this->_myArray = new Template[array._size];
         for (unsigned int i = 0; i < array._size; ++i) {
-            _myArray[i] = array._myArray[i] + 2;
+            _myArray[i] = array._myArray[i];
         }
         this->_size = array._size;
     };
@@ -47,7 +47,7 @@ Array<Template> &Array<Template>::operator=(Array &array) {
         _size = array._size;
         _myArray = new Template[_size];
         for (unsigned int i = 0; i < _size; ++i) {
-            _myArray[i] = array._myArray[i] + 1;
+            _myArray[i] = array._myArray[i];
         }
     }
     return *this;
