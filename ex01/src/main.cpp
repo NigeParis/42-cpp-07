@@ -9,16 +9,16 @@ int main() {
     std::cout << "--------------- int Array + 33 in printElement ----------------" << std::endl;
 
     std::size_t intLength = sizeof(intArray) / sizeof(intArray[0]);
-    iter(intArray, intLength, printElement);
+    iter(intArray, intLength, printElement<int>);
 
     std::cout << "--------------- string Array + 33 in printElement -------------" << std::endl;
 
     std::size_t strLength = sizeof(strArray) / sizeof(strArray[0]);
-    iter(strArray, strLength, printElement);
+    iter(strArray, strLength, printElement<std::string>);
 
     std::cout << "--------------- char Array + 33 in printElement----------------" << std::endl;
     std::size_t charLength = sizeof(charArray) / sizeof(charArray[0]);
-    iter(charArray, charLength, printElement);
+    iter(charArray, charLength, printElement<char>);
 
     return 0;
 }
