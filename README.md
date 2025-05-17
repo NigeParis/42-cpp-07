@@ -102,8 +102,8 @@ int main() {
     iter(arr, 5, printElement);
     return 0;
 }
+```
 
----
 Explanation
 
     iter() takes:
