@@ -31,3 +31,41 @@ int main() {
     print("Hello, 42!");
 }
 ```
+Templates in C++
+
+Templates allow creating generic functions that work with multiple types without redundancy.
+
+Example:
+
+```cpp
+#include <iostream>
+
+template <typename T>
+void print(T x) {
+    std::cout << "Value: " << x << std::endl;
+}
+
+int main() {
+    print(42);       // Works for int
+    print(3.14);     // Works for double
+    print("Hello");  // Works for string
+}
+
+```
+
+Why Use Templates?
+
+    Eliminates repetitive function definitions.
+
+    Supports any data type, making code more scalable.
+
+Key Takeaways
+
+    Function overloading simplifies multi-type support with identical function names.
+
+    Templates make functions more flexible and reusable across data types.
+
+    Both techniques help write cleaner, more efficient C++ code.
+```
+
+
