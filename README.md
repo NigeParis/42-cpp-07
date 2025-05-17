@@ -66,6 +66,6 @@ Key Takeaways
     Templates make functions more flexible and reusable across data types.
 
     Both techniques help write cleaner, more efficient C++ code.
-```
+
 
 
