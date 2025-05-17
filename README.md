@@ -66,6 +66,42 @@ Key Takeaways
     Templates make functions more flexible and reusable across data types.
 
     Both techniques help write cleaner, more efficient C++ code.
+# **42 - Exercise 01: iter (C++ Module 07)**
+
+## **Overview**
+This exercise focuses on **templates** and **function iterators** in C++. The goal is to create a **generic function** that applies a given function to each element in an array.
+
+---
+
+## **Objectives**
+- Implement a **template function** to iterate over an array.
+- Apply a function to each element without modifying the original array structure.
+- Reinforce **template programming** principles.
+
+---
+
+## **Function Template for Iteration**
+The idea is to use **templates** so that `iter()` works with **any type of array**.
+
+### **Example Implementation**
+```cpp
+#include <iostream>
+
+template <typename T, typename F>
+void iter(T* array, size_t length, F func) {
+    for (size_t i = 0; i < length; ++i)
+        func(array[i]);
+}
+
+void printElement(int x) {
+    std::cout << x << " ";
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    iter(arr, 5, printElement);
+    return 0;
+}
 
 
 
