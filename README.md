@@ -104,4 +104,24 @@ int main() {
 }
 
 
+Explanation
 
+    iter() takes:
+
+        A pointer to an array.
+
+        The array length.
+
+        A function to apply to each element.
+
+    The template ensures the function works for any data type.
+
+    The printElement() function is passed as an argument, applying it to each element.
+
+Key Takeaways
+
+    Templates make functions flexible and reusable.
+
+    The iterator function ensures each element is processed dynamically.
+
+    This reinforces generic programming concepts in C++.
