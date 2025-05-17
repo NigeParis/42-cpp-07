@@ -125,3 +125,72 @@ Key Takeaways
     The iterator function ensures each element is processed dynamically.
 
     This reinforces generic programming concepts in C++.
+
+
+# **42 - Exercise 02: Array **  
+
+## **Overview**  
+This exercise focuses on **templates** and **dynamic arrays**, allowing the creation of a generic array class in C++. The goal is to implement a **template-based array structure** that supports various data types.  
+
+---
+
+## **Objectives**  
+- Implement a **template class** for dynamic arrays.  
+- Ensure **safe memory management** with proper allocation and deallocation.  
+- Provide **operator overloading** for element access.  
+- Handle **out-of-bounds exceptions** gracefully.  
+
+---
+
+## **Implementation Approach**  
+
+### **1. Template-Based Array Class**  
+The class should support **any data type**, providing dynamic memory allocation.  
+
+```cpp
+#include <iostream>
+#include <stdexcept>
+
+template <typename T>
+class Array {
+private:
+    T* data;
+    size_t size;
+public:
+    Array(size_t s) : size(s) { data = new T[s]; }
+    
+    ~Array() { delete[] data; }
+
+    T& operator[](size_t index) {
+        if (index >= size) throw std::out_of_range("Index out of bounds");
+        return data[index];
+    }
+
+    size_t length() const { return size; }
+};
+
+int main() {
+    Array<int> numbers(5);
+    try {
+        numbers[0] = 42;
+        std::cout << "First element: " << numbers[0] << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+}
+
+```
+
+Explanation
+
+    Templates allow flexibility, making the array work with any data type.
+
+    Dynamic memory allocation (new/delete) prevents memory leaks.
+
+    Operator overloading ([]) ensures intuitive element access.
+
+    Exception handling (std::out_of_range) prevents accessing invalid indices.
+
+Key Takeaways
+
+✔ Templates make arrays adaptable to any type. ✔ Memory management ensures safe allocation and deallocation. ✔ Error handling prevents runtime crashes due to invalid access.
