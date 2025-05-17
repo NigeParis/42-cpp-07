@@ -193,4 +193,9 @@ Explanation
 
 Key Takeaways
 
-✔ Templates make arrays adaptable to any type. ✔ Memory management ensures safe allocation and deallocation. ✔ Error handling prevents runtime crashes due to invalid access.
+```
+    Templates make arrays adaptable to any type.
+
+    Memory management ensures safe allocation and deallocation.
+
+    Error handling prevents runtime crashes due to invalid access.
