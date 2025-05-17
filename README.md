@@ -182,7 +182,7 @@ int main() {
 ```
 
 Explanation
-
+```
     Templates allow flexibility, making the array work with any data type.
 
     Dynamic memory allocation (new/delete) prevents memory leaks.
@@ -191,6 +191,7 @@ Explanation
 
     Exception handling (std::out_of_range) prevents accessing invalid indices.
 
+```
 Key Takeaways
 
 ```
